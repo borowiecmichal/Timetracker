@@ -1,4 +1,4 @@
-const apikey = "c7efe1f2-f005-4ec6-b1bf-471191f5df2b";
+const apikey = "52e5cddf-b0a7-4ca2-a686-c6a5e64adc59";
 const apihost = 'https://todo-api.coderslab.pl';
 
 function formatTime(time) {
@@ -319,6 +319,8 @@ function renderOperation(operationsList, status, operationId, operationDescripti
 document.addEventListener('DOMContentLoaded', function () {
     apiListTasks().then(
         function (response) {
+            console.log('response: '+ response);
+            console.log('responseData: '+ response.data[0].title);
             response.data.forEach(task => {
                 renderTask(task.id, task.title, task.description, task.status);
             })
